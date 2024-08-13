@@ -1,8 +1,6 @@
 public class ContaPoupanca extends Conta {
 
-
-    @Override
-    public void imprimirExtrato() {
-
+    public ContaPoupanca() {
+        super();
     }
 }
