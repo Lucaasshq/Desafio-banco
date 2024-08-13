@@ -8,4 +8,20 @@ public class Cliente {
         this.cpf = cpf;
         this.conta = conta;
     }
+
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public Conta getConta() {
+        return conta;
+    }
+
+
 }
