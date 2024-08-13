@@ -1,15 +1,15 @@
 abstract class Conta implements IConta {
-
+    private static int contadorAgencia = 1;
+    private static int contadorNumero = 0001;
 
     private int agencia;
     private int numero;
-    private int saldo;
+    private double saldo;
 
     public Conta() {
-        this.agencia = +1;
-        this.numero = +2;
+        this.agencia = contadorAgencia++;
+        this.numero = contadorNumero++;
     }
-
     @Override
     public void sacar(double valor) {
         saldo -= valor;
@@ -35,14 +35,23 @@ abstract class Conta implements IConta {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Conta{" +
-                "agencia=" + agencia +
-                ", numero=" + numero +
-                ", saldo=" + saldo +
-                '}';
+    public void mostrarDados() {
+        System.out.println("Número: " +getNumero());
+        System.out.println("Agencia: " +getAgencia());
+        System.out.println("Saldo: " +getSaldo());
     }
 
+
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
 
 }
